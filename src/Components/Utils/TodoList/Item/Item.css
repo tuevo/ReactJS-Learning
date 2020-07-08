@@ -1,0 +1,21 @@
+.todo-list__list-item__item {
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid #eee;
+  color: gray;
+}
+
+.todo-list__list-item__item:hover {
+  background: #eee;
+}
+
+.todo-list__list-item__item h6 {
+  width: 90%;
+}
+
+.todo-list__list-item__item input {
+  width: 10%;
+}

@@ -1,0 +1,17 @@
+.todo-list__toolbar {
+  display: flex;
+
+  margin: 5px 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.todo-list__toolbar li {
+  margin-right: 20px;
+}
+
+.todo-list__toolbar li button {
+  background: none;
+  border: 0;
+}

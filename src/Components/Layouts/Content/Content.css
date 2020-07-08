@@ -1,0 +1,15 @@
+.content {
+  /* Size */
+  width: 85%;
+  height: 80vh;
+
+  /* Display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Block (padding, margin) */
+
+  /* Color */
+  background: yellow;
+}
