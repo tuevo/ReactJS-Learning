@@ -1,0 +1,20 @@
+header {
+  /* Size */
+  height: 50px;
+  width: 100vw;
+
+  /* Display */
+  display: flex;
+  align-items: center;
+
+  /* Block */
+  padding: 10px;
+
+  /* Color */
+  background: red;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+}
