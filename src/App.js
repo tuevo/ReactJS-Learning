@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Layouts/Header/Header';
 import Sidebar from './Components/Layouts/Sidebar/Sidebar';
 import Content from './Components/Layouts/Content/Content';
+import Footer from './Components/Layouts/Footer/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Sidebar />
           <Content />
         </div>
+        <Footer />
       </div>
     </div>
   );

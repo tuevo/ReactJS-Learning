@@ -1,7 +1,9 @@
 .sidebar {
   width: 15%;
-  height: 80vh;
+  height: 100vh;
 
-  background: blue;
-  color: white;
+  padding: 90px 30px;
+  box-sizing: border-box;
+
+  background: #dcdcdc;
 }

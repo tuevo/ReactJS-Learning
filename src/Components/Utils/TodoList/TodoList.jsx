@@ -3,13 +3,23 @@ import './TodoList.css';
 import SearchBox from './SearchBox/SearchBox';
 import Toolbar from './Toolbar/Toolbar';
 import Item from './Item/Item';
+import TodoForm from './TodoForm/TodoForm';
 
 export default class TodoList extends Component {
   constructor(props) {
     super(props);
 
+    const data = [
+      { id: 1, title: 'Sleep', done: false },
+      { id: 2, title: 'Code', done: false },
+      { id: 3, title: 'Eat', done: true },
+      { id: 4, title: 'Sport', done: false },
+    ];
+
     this.state = {
-      selectedItems: []
+      selectedItems: [],
+      todos: [...data],
+      filteredTodos: [...data]
     }
   }
 
@@ -25,30 +35,49 @@ export default class TodoList extends Component {
     this.setState({ selectedItems });
   }
 
+  filterTodos(term) {
+    let { filteredTodos, todos } = this.state;
+    filteredTodos = !term ? [...todos] : todos.filter(item => {
+      const lowerTitle = item.title.toLowerCase();
+      return lowerTitle.includes(term.toLowerCase());
+    });
+    this.setState({ filteredTodos });
+  }
+
+  addTodo(title) {
+    let { todos } = this.state;
+    const newTodo = {
+      id: todos.length + 1,
+      title,
+      done: false
+    };
+
+    todos.push(newTodo);
+    this.setState({ todos });
+    this.filterTodos('');
+  }
+
   render() {
-    console.log(process.env.REACT_APP_API_URL);
-
-    const { selectedItems } = this.state;
-
-    let todos = [
-      { id: 1, title: 'Do something 1', done: false },
-      { id: 2, title: 'Do something 2', done: false },
-      { id: 3, title: 'Do something 3', done: true },
-      { id: 4, title: 'Do something 4', done: false },
-    ];
-
-    todos = todos.filter(item => selectedItems.indexOf(item.id) < 0);
+    let { selectedItems, filteredTodos } = this.state;
+    filteredTodos = filteredTodos.filter(item => selectedItems.indexOf(item.id) < 0);
 
     return (
       <div className="todo-list">
-        <h1 className="todo-list__title --main">TODO LIST</h1>
-        <h6 className="todo-list__title --sub">Notice your work</h6>
+        <h1 className="todo-list__title todo-list__title--main">TODO LIST</h1>
+        <h6 className="todo-list__title todo-list__title--sub">Manage your task</h6>
 
-        <SearchBox />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <SearchBox
+            filterTodos={term => this.filterTodos(term)}
+          />
+          <TodoForm
+            submitTodo={title => this.addTodo(title)}
+          />
+        </div>
         <Toolbar />
 
         <ul className="todo-list__list-item">
-          {todos.map(item => {
+          {filteredTodos.map(item => {
             return <Item
               key={item.id}
               id={item.id}

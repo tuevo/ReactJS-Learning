@@ -9,7 +9,7 @@
 }
 
 .todo-list__list-item__item:hover {
-  background: #eee;
+  background: #f8f8f8;
 }
 
 .todo-list__list-item__item h6 {
@@ -18,4 +18,5 @@
 
 .todo-list__list-item__item input {
   width: 10%;
+  cursor: pointer;
 }
