@@ -1,18 +1,22 @@
 header {
   /* Size */
-  height: 50px;
+  height: 5vh;
   width: 100vw;
 
   /* Display */
+  position: absolute;
+  z-index: 100;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 
   /* Block */
-  padding: 10px;
+  padding: 10px 30px;
 
   /* Color */
-  background: red;
-  color: white;
+  background: white;
+  color: gray;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 h1 {

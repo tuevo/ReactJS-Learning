@@ -5,7 +5,7 @@ export default class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar">
-        Sidebar here.
+        Sidebar here
       </div>
     )
   }

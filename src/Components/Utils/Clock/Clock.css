@@ -1,0 +1,21 @@
+.clock {
+  position: relative;
+
+  padding: 10px 30px;
+
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock .clock__btn {
+  position: absolute;
+  top: -30px;
+  left: 0;
+
+  background: none;
+  color: rgba(0, 0, 0, 0.4);
+
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
